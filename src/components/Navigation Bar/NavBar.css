@@ -1,0 +1,68 @@
+@font-face {  
+    src: url('./../../../font/Urbanist-VariableFont_wght.ttf');
+    font-family:Urbanist;
+}
+.navbaritems{
+    background-color: rgb(236,236,236);
+    font-family: Urbanist;
+    height: 70px;
+    width:100%;
+    align-items: center;
+    box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58,57,57);
+    display: grid;
+    grid-template-columns: 5rem 0.35fr 1fr 1fr 0.5fr 5rem;
+}
+.NavLogo{
+    display: grid;
+    width: 100px;
+    height: 36px;
+    padding: 15px;
+    grid-column: 2/3;
+    align-items: center;
+}
+.MenuLink{
+    grid-column: 4/5;
+}
+.MenuLink ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.MenuLink li{
+    list-style: none;
+}
+.MenuLink a{
+    text-decoration: none;
+    color: black;
+}
+#searchBar{
+    display: flex;
+    border:none;
+    align-items: flex-start;
+    text-align: left;
+    height: 2rem;
+    margin: auto;
+    padding:0.2rem 1rem;
+    width:80%;
+    grid-column: 3/4;
+    border-radius: 5px;
+
+}
+.UserIcon-Bt{ 
+    height: 100%;
+    width: 50px;
+    border:none;
+    background-color: rgb(236, 236, 236);
+   
+}
+.UserIcon{
+        height: 52px;
+    width: 50px;
+}
+.UserIcon,.UserIcon-Bt{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 5/6;
+}

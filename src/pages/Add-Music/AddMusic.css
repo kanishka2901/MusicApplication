@@ -1,0 +1,136 @@
+@font-face {  
+    src: url('./../../../font/Urbanist-VariableFont_wght.ttf');
+    font-family:Urbanist;
+}
+.AddMusic-MainForm{
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+.AddMusic-Header{
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    font-family:Urbanist;
+}
+.AddMusic-Form-img{
+    margin-right: 20px;
+    height: 200px;
+    width: 300px;
+}
+.AddMusic-Form-img img{
+    height: 200px;
+    width: 250px;
+    border-radius: 20px;
+}
+.AddMusic-Form{
+    margin-left: 20px;
+    height: 200px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    font-family:Urbanist;
+}
+.AddMusic-Form p{
+    margin: auto;
+    margin-bottom: 0.2rem;
+    width:350px
+}
+
+.AddMusic-Filesupload{
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58,57,57);
+    width:800px;
+    font-family:Urbanist;
+    border-radius: 5px;
+}
+
+.Drag-drop:hover{
+    opacity: 0.6;
+}
+
+.Drag-drop{
+    border:1px black dashed;
+    margin: 20px 20px 5px 20px; 
+    height:27vh; 
+    position: relative;
+    justify-content: center;
+    border-radius: 5px;    
+}
+.Drag-drop img{
+    margin-top: 10px;
+}
+.Drag-drop p{
+    margin-bottom: 10px;
+}
+.Drag-drop input{
+    opacity:0;
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.Files-uploaded{
+    display: flex;
+    height: 10vh;
+    
+}
+.Files-uploaded-file{
+    border:1px black solid;
+    margin: 5px 20px 20px 20px; 
+    width: 70%;
+    border-radius: 5px;
+    align-items: center;
+
+}
+.Files-uploaded-item{
+    position: relative;
+    display: flex;
+    margin: 5px;
+    border-radius: 20px;
+}
+.Files-uploaded-item img{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+.Files-uploaded-item p{
+    margin: 0px 20px 0px 0px;
+}
+.Files-uploaded-item-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Files-uploaded button{
+    right: 0px;
+    margin: 5px 20px 20px 20px;
+    width: 200px;
+    font-family:Urbanist;
+    font-size: 16px;
+    color: white;
+    background-color: #2EC4B6;
+    border: none;
+    border-radius: 5px;
+
+}
+.Files-uploaded-item-del{
+    opacity: 0;
+}
+.Files-uploaded-item-del:hover{
+    opacity: 1;
+}
+.Files-uploaded button:hover{
+    box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.5);
+}
+    

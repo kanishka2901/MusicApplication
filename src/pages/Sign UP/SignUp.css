@@ -1,0 +1,98 @@
+@font-face {  
+    src: url('./../../../font/Urbanist-VariableFont_wght.ttf');
+    font-family:Urbanist;
+}
+.Main-Signup{
+    max-height:min-content;
+    min-width:min-content;
+    font-family: Urbanist;
+    overflow-x: hidden;
+    background: linear-gradient(to right bottom,rgba(236,236,236,0.7),rgba(236,236,236,0.5));
+    /*background: url(https://i.pinimg.com/564x/af/c0/4a/afc04abf4e12012a9cce4e2b3f05438c.jpg);*/
+    background-size: cover;
+    background-position: center;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    
+}
+.Signup-container{
+        height: 72vh;
+        width: 30%;
+        background: linear-gradient(to left top,rgba(236,236,236,0.7),rgba(46,196,182,0.1));
+        border-radius: 1rem;
+        margin: 2rem auto;
+        box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58,57,57);
+
+}
+#head1{
+    font-size: 40px;
+    font-weight: 400;
+}
+#line1{
+    
+    font-weight: 400;
+}
+#head1,#line1,#footer{
+    text-align: center;
+    margin:auto;
+    margin-top: 10px;
+}
+#footer a{
+    text-decoration: none;
+}
+.Form{
+    margin: 25px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Logo{
+    width: 200px;
+    height: 116px;
+    padding: 10px 0px;
+    padding-bottom: 0%;
+}
+
+#pwd1,#eml1,#name1{
+    display:block ;
+    border:none;
+    height: 2rem;
+    width: 60%;
+    padding:0.2rem 1rem;
+}
+.Sign-up-label{
+    display: block;
+    text-align:justify;
+    width:60%;
+    font-size: small;
+    color: gray;
+    margin-bottom: 0.5rem;
+}
+#Signup_but{
+
+    padding: 15px;
+    width: 30%;
+    background: #2EC4B6;
+    border-radius: 10px;
+    border: 0cm;
+    font-weight: 200;
+    font-size: 15px;
+    color: #CBF3F0;
+}
+#Signup_but:hover{
+    
+    box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.5);
+}
+
+.errors{
+    color: red;
+    display: block;
+    text-align: left;
+    width:60%;
+    margin: auto;
+    font-size: small;
+    margin-bottom: 1.0rem;
+}

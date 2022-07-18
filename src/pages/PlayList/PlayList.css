@@ -1,0 +1,92 @@
+@font-face {  
+    src: url('./../../../font/Urbanist-VariableFont_wght.ttf');
+    font-family:Urbanist;
+}
+
+.Playlist-Header{
+    margin-top: 25px;
+    justify-content: center;
+    display: flex;
+}
+
+.Playlist-Header-label{
+    font-family:Urbanist;
+}
+.Playlist-Search-bar{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 160px 0px 10px;
+}
+.Playlist-search{
+    margin: 0px 10px 0px 10px;
+    padding: none;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 300px;
+    height: 30px;
+}
+#index{
+    font-weight:900;
+}
+.song-list{
+    /* box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border-radius: 10px ; */
+    padding-top: 10px;
+    margin: auto;
+  width: 80%;
+
+}
+.song-card-icons{
+    margin: 20px;
+}
+.song-card-icons:hover{
+    cursor: pointer;
+}
+.song-card{
+    text-align: left;
+    align-items: center;
+    font-family:Urbanist;
+    display: grid;
+    grid-template-columns: 40px 300px 300px 300px 300px;
+    
+    margin: 20px;
+    height: 70px;
+    border-radius: 5px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    /* background-color: #CBF3F0; */
+    font-size: large;
+}
+.song-card p{
+    overflow:hidden
+}
+
+.action-delete:hover,.action-edit:hover{
+    cursor: pointer;
+    margin: 30px;
+}
+.action-delete,.action-edit{
+    margin: 30px;
+}
+.Playlist-Add-Btn{
+    margin: auto;
+    width: min-content;
+    border-radius: 50%;
+    right:0px;
+}
+.Playlist-Add-Btn:hover{
+    box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.5);
+    transition:0.2s;
+}
+.Playlist-Add-Btn svg{
+    font-size: 70px;
+    border-radius: 50%;
+    border: none;
+    background-color: #2EC4B6;
+    color: white;
+}
+.Playlist-Add-Btn svg:hover{
+    color: #2EC4B6;
+    background-color: white;
+    transition:0.2s;
+}

@@ -1,0 +1,30 @@
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10%;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.logo{
+    width: 30%;
+}
+.sign-up,.sign-in
+{
+    
+    padding: 15px;
+    width: 200px;
+    background: #2EC4B6;
+    border-radius: 8px;
+    border: 0cm;
+    font-weight: 200;
+    font-size: 20px;
+    color: #CBF3F0;
+    margin-top:30px;
+}
+
+.sign-up:hover,.sign-in:hover{
+    
+    box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,59 @@
+@font-face {  
+    src: url('./../../../font/Urbanist-VariableFont_wght.ttf');
+    font-family:Urbanist;
+}
+.container-slider{
+    max-width:1550px;
+    height: 500px;
+    margin:0px auto 0;
+    position: relative;
+    overflow:hidden;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+    border-radius: 0px 0px 10px 10px;
+}
+.slider{
+    position:absolute;
+    z-index: -1000;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity ease-in-out 0.4s;
+}
+.active-anim{
+    opacity: 1;
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.btn-slide img{
+    width: 35px;
+    height: 35px;
+    pointer-events: none;
+}
+.btn-slide{
+    background: none;
+    border: none;
+    height: 750px;
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.btn-slide:hover{
+    opacity: 1;
+}
+.prev{
+    top:50%;
+    left: 20px;
+    transform: translateY(-60%);
+}
+.next{
+    top:50%;
+    right: 20px;
+    transform: translateY(-60%);
+}

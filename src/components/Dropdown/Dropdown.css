@@ -1,0 +1,41 @@
+@font-face {  
+    src: url('./../../../font/Urbanist-VariableFont_wght.ttf');
+    font-family:Urbanist;
+}
+.dropdown-menu{
+    width:200px;
+    position: absolute;
+    z-index: 1000;
+    top: 55px;
+    list-style: none;
+    text-align: start;
+}
+.dropdown-menu-clicked{
+    display:none;
+}
+.dropdown-menu li{
+    background-color:rgb(236,236,236);
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover{
+    background-color:rgb(230, 230, 230);   
+}
+
+.dropdown-menu.clicked{
+    display: none;
+}
+
+.dropdown-link{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-family: Urbanist;
+    padding: 16px;
+    
+}
+.Dropdown-Link-tag{
+    text-decoration: none;
+    color: black;
+}
