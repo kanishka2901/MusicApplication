@@ -7,6 +7,7 @@ import Home from './pages/Homepage/Homepage';
 import Playlist from './pages/PlayList/PlayList';
 import AddMusic from './pages/Add-Music/AddMusic';
 import Contact from './pages/Contact/Contact';
+import SongComponent from './components/SongComponent';
 function App() {
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
         <Route exact path="/Sign-In" element={<SignIn/>}></Route>
         <Route exact path="/Sign-Up" element={<SignUp/>}></Route>
         <Route exact path="/Home" element={<Home/>}></Route>
-        <Route exact path="/Your-Playlist" element={<Playlist/>}></Route>
+        <Route exact path="/Your-Playlist" element={<SongComponent/>}></Route>
         <Route exact path="/AddMusic" element={<AddMusic/>}></Route>
         <Route exact path="/Contact" element={<Contact/>}></Route>
       </Routes>
