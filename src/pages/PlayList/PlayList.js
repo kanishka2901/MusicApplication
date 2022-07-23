@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import NavBar from '../../components/Navigation Bar/NavBar'
 import './PlayList.css';
 import {Link} from 'react-router-dom';
@@ -13,46 +13,39 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
 import FileDownloadRoundedIcon from '@mui/icons-material/FileDownloadRounded';
+import base_url from '../../components/API/Bootapi';
+import { AxiosContext } from 'react-axios/lib/components/AxiosProvider';
+import axios from "axios";
+import Music from '../music/Music';
+import { toast } from 'react-toast';
 
 function PlayList() {
 
   const [filter,setFilter]=useState("");
-  
+  const [song,setSong]=useState([]);
   const handleClickDel=(v) =>{
     const newList =[...SongList];
     const index = SongList.findIndex((song)=>song.id === v);
     newList.splice(index,1);
     console.log(newList);
   }
-  // const handleClickEdit=(e,v) =>{
-  //   console.log(v);
-  //}
+  const getAllMusicFromServer = () => {
+    axios.get(`${base_url}/findAllMusic`).then( 
+      (response) => {
+        console.log(response.data);
+        toast.success("Playlist successfully loaded");
+        setSong(response.data);
+      },
+      (error) => {
+        console.log(error);
+        toast.error("Something went wrong");
+      }
+    );
+  };
 
-  // const columns = [
-  //   { field: 'name', headerName: 'SONG NAME', width: 350 },
-  //   { field: 'date', headerName: 'DATE OF RELEASE', width: 350},
-  //   { field: 'singer', headerName: 'SINGER', width: 350},
-  //   { field: 'actions', headerName:'', width:300,
-  //     renderCell: (cellValues) =>{
-  //       return(
-  //         <>
-  //           <DeleteIcon className='action-delete' onClick ={(e)=>{
-  //             handleClickDel(cellValues.id);
-  //           }}/>
-  //           <EditOutlinedIcon className='action-edit' onClick ={(e)=>{
-  //             handleClickEdit(e,cellValues);
-  //           }}/>
-
-  //         </>
-
-  //       );
-  //     }
-  //   }
-  // ];
-
-  // const searchText=(event)=>{
-  //   setFilter(event.target.value);
-  // }
+  useEffect( () => {
+    getAllMusicFromServer();
+  });
 
     let FilteredSong= SongList.filter(song => {
       return Object.keys(song).some(key =>
@@ -86,34 +79,9 @@ function PlayList() {
               </IconButton>
             </div>
           </div >
-          {/* <div style={{ height: 370, width: '95%', overflow: 'hidden', margin: 40 }}>
-            <DataGrid
-              rows={FilteredSong}
-              columns={columns}
-              pageSize={5}
-              rowsPerPageOptions={[5]}
-              checkboxSelection
-            />
-          </div> */}
-
-          <div className='song-list'>
-            {
-              FilteredSong.map((song,index)=>(
-                <div className='song-card' key={index}>
-                    <p id='index'>0{index+1}</p>
-                    <p>{song.name}</p>
-                    <p>{song.date}</p>
-                    <p>{song.singer}</p>
-                    <div>
-                      <DeleteIcon className='song-card-icons' onClick ={(e)=>{ handleClickDel(song.id)}}/>
-                      <EditOutlinedIcon className='song-card-icons'/>                    
-                      <FileDownloadRoundedIcon className='song-card-icons'/>
-                      <MoreHorizTwoToneIcon className='song-card-icons'/>
-                    </div>
-                </div>
-              ))
-            }
-          </div>
+          {
+            song.length>0 ? song.map( (item) =>   <Music song={item}/> ):"no songs" 
+          }
           <div className='Playlist-Add-Btn'>
             <Link to="/AddMusic">
               <IconButton >
