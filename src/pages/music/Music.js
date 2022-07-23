@@ -10,8 +10,11 @@ import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
 import FileDownloadRoundedIcon from '@mui/icons-material/FileDownloadRounded';
 import Axios from 'axios';
+import axios from "axios";
 import base_url from '../../components/API/Bootapi';
 import FileDownload from "js-file-download";
+import { toast } from 'react-toast';
+
 const Music = ({song}) => {
   const download =(e) =>{
     e.preventDefault()
@@ -23,6 +26,40 @@ const Music = ({song}) => {
       FileDownload(res.data)
     })
   }
+
+  const [songs,setSongs]=useState([]);
+  
+  const getAllMusicFromServer = () => {
+    axios.get(`${base_url}/findAllMusic`).then( 
+      (response) => {
+        console.log(response.data);
+        toast.success("Playlist successfully loaded");
+        setSongs(response.data);
+      },
+      (error) => {
+        console.log(error);
+        toast.error("Something went wrong");
+      }
+    );
+  };
+
+
+  const deleteSong =(e,id) => {
+    e.preventDefault()
+    axios.delete(`${base_url}/delete/{id}`).then( 
+      (response) => {
+        console.log(response.data);
+        toast.success("Song successfully deleted");
+        setSongs(response.data);
+        getAllMusicFromServer();
+      },
+      (error) => {
+        console.log(error);
+        toast.error("Something went wrong");
+      }
+    );
+  }
+  
     return (
         <div className='song-list'>
             {
@@ -33,7 +70,7 @@ const Music = ({song}) => {
                     <p>{song.genre}</p>
                     <p>{song.artist}</p>
                     <div>
-                      <DeleteIcon className='song-card-icons'  />
+                      <DeleteIcon onClick={(e)=>deleteSong(e,song.id)} className='song-card-icons'  />
                       <EditOutlinedIcon className='song-card-icons'/>                    
                       <FileDownloadRoundedIcon onClick={(e)=>download(e)} className='song-card-icons'/>
                       <MoreHorizTwoToneIcon className='song-card-icons'/>
