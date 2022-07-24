@@ -7,7 +7,7 @@ import Home from './pages/Homepage/Homepage';
 import Playlist from './pages/PlayList/PlayList';
 import AddMusic from './pages/Add-Music/AddMusic';
 import Contact from './pages/Contact/Contact';
-
+import EditForm from './components/EditForm';
 function App() {
   return (
     <>
@@ -19,6 +19,7 @@ function App() {
         <Route exact path="/Home" element={<Home/>}></Route>
         <Route exact path="/Your-Playlist" element={<Playlist/>}></Route>
         <Route exact path="/AddMusic" element={<AddMusic/>}></Route>
+        <Route exact path="/EditForm" element={<EditForm/>}></Route>  
         <Route exact path="/Contact" element={<Contact/>}></Route>
       </Routes>
     </Router>
