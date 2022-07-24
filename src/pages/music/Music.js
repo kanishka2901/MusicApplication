@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../../components/Navigation Bar/NavBar";
-import { IconButton } from "@mui/material";
-import FilterAltRoundedIcon from "@mui/icons-material/FilterAltRounded";
-import FilterListRoundedIcon from "@mui/icons-material/FilterListRounded";
-import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import MoreHorizTwoToneIcon from "@mui/icons-material/MoreHorizTwoTone";
 import FileDownloadRoundedIcon from "@mui/icons-material/FileDownloadRounded";
-import Axios from "axios";
 import axios from "axios";
 import base_url from "../../components/API/Bootapi";
 import FileDownload from "js-file-download";
@@ -17,10 +11,12 @@ import { toast } from "react-toast";
 import EditForm from "../../components/EditForm";
 import { Form, Button } from "react-bootstrap";
 import {Link} from 'react-router-dom';
+
 const Music = ({ song }) => {
+
   const download = (e) => {
     e.preventDefault();
-    Axios({
+    axios({
       url: `${base_url}/downloadFile`,
       method: "GET",
       responseType: "blob",

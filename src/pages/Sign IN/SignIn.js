@@ -9,7 +9,6 @@ export default function SignIn() {
 
   const[Name,setName]=useState("");
   const[Password,setPassword]=useState("");
-  const[user,setUser]=useState([]);
   const[Errors,setErrors]=useState({});
   const[IsSubmit,setIsSubmit] = useState(false)
 
@@ -17,16 +16,9 @@ export default function SignIn() {
   const handlesubmit=(event)=>{
     event.preventDefault();
     setErrors(validate(Name,Password))
+    
     setIsSubmit(true);    
   }
-
-  // useEffect(()=>{
-  //   fetch("")
-  //   .then(res=>res.json())
-  //   .then((result) =>{
-  //     setUser(result);
-  //   })
-  // },[])
 
   const validate=(name,pass)=>{
     const error={};
@@ -37,15 +29,21 @@ export default function SignIn() {
     if(!pass){
       error.password="Password is required!";
     }
-    user.map(user=>{
-      if(pass !== user.Password || name !== user.Name){
-      error.password="Invaild Username or Password";
-      setName("");
-      setPassword("");
-    }
+
+    axios.post(`${base_url}/userLogin`),{
+      name:Name,
+      password: Password
+    }.then((res) => {
+      
     })
-    // const Eml="kanishka123@gmail.com";
-    // const password="123kanishka";
+
+    // user.map(user=>{
+    //   if(pass !== user.Password || name !== user.Name){
+    //   error.password="Invaild Username or Password";
+    //   setName("");
+    //   setPassword("");
+    // }
+    // })
     return error;
   }
 

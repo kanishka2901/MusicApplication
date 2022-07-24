@@ -4,7 +4,6 @@ import './PlayList.css';
 import {Link} from 'react-router-dom';
 import { IconButton } from '@mui/material';
 //import { DataGrid } from '@mui/x-data-grid';
-import { SongList } from "../../components/SongList";
 import FilterAltRoundedIcon from '@mui/icons-material/FilterAltRounded';
 import FilterListRoundedIcon from '@mui/icons-material/FilterListRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
@@ -22,13 +21,9 @@ import { toast } from 'react-toast';
 function PlayList() {
 
   const [filter,setFilter]=useState("");
+  
   const [song,setSong]=useState([]);
-  const handleClickDel=(v) =>{
-    const newList =[...SongList];
-    const index = SongList.findIndex((song)=>song.id === v);
-    newList.splice(index,1);
-    console.log(newList);
-  }
+  
   const getAllMusicFromServer = () => {
     axios.get(`${base_url}/findAllMusic`).then( 
       (response) => {
@@ -47,14 +42,14 @@ function PlayList() {
     getAllMusicFromServer();
   });
 
-    let FilteredSong= SongList.filter(song => {
+    let FilteredSong= song.filter(song => {
       return Object.keys(song).some(key =>
         song[key].toString().toLowerCase().includes(filter.toString().toLowerCase()))
     });
 
   return (
     <>
-        <NavBar/>
+        <NavBar setFilter={setFilter}/>
         <div className='Page'>
           <div  className="Playlist-Header">
             <h1 className='Playlist-Header-label'>Uploded Songs</h1>
@@ -80,7 +75,7 @@ function PlayList() {
             </div>
           </div >
           {
-            song.length>0 ? song.map( (item) =>   <Music song={item}/> ):"no songs" 
+            song.length>0 ? FilteredSong.map( (item) =>   <Music song={item}/> ):"no songs" 
           }
           <div className='Playlist-Add-Btn'>
             <Link to="/AddMusic">

@@ -5,21 +5,16 @@ import logo from './../../assets/Logo.png';
 import icon from './../../assets/UserIcon.svg'
 import './NavBar.css'
 
-import {SongList} from './../SongList';
-
-function NavBar(){
+function NavBar({setFilter}){
 
   const [dropdown,setDropdown]= useState(false);
-  const [filter,setFilter]=useState('');
-  
-  // const searchText=(event)=>{
-  //   setFilter(event.target.value);
-  // }
-  const newList = SongList.filter((song) => {
-    return (Object.keys(song).some((key) =>
-      song[key].toString().toLowerCase().includes(filter.toString().toLowerCase())))
-  });
-  // console.log(newList)
+  const [filter,setfilter]=useState('');
+
+  const handleClick = (e) =>{
+    setfilter(e);
+    setFilter(filter)
+  }
+
     return(
       <>
     <nav className='navbaritems'>
@@ -29,7 +24,7 @@ function NavBar(){
         type="text" 
         placeholder="SEARCH"
         value={filter}
-        onChange={(e) => setFilter(e.target.value)}
+        onChange={(e) => handleClick(e.target.value)}
         ></input>    
         <div className='MenuLink'>
           <ul>
