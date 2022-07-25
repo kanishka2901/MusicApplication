@@ -3,6 +3,9 @@ import logo from '../../assets/Logo.png';
 import './SignIn.css'
 import {Link, Navigate} from 'react-router-dom';
 import TextField from '@mui/material/TextField';
+import { History } from 'history';
+import base_url from '../../components/API/Bootapi';
+import axios from 'axios';
 
 
 export default function SignIn() {
@@ -30,13 +33,14 @@ export default function SignIn() {
       error.password="Password is required!";
     }
 
-    axios.post(`${base_url}/userLogin`),{
+    return (
+    axios.post((`${base_url}/userLogin`),{
       name:Name,
       password: Password
-    }.then((res) => {
-      
+    }).then((res) => {
+      this.props.history.push('/Home');
     })
-
+    )
     // user.map(user=>{
     //   if(pass !== user.Password || name !== user.Name){
     //   error.password="Invaild Username or Password";
@@ -44,7 +48,7 @@ export default function SignIn() {
     //   setPassword("");
     // }
     // })
-    return error;
+   
   }
 
 
