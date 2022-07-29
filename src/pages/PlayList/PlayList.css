@@ -1,8 +1,23 @@
+/* @import url('https://www.syncfusion.com/ej2/material.css'); */
+@import './../../../node_modules/@syncfusion/ej2-base/styles/material.css';  
+@import './../../../node_modules/@syncfusion/ej2-buttons/styles/material.css';  
+@import './../../../node_modules/@syncfusion/ej2-calendars/styles/material.css';  
+@import './../../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';  
+@import './../../../node_modules/@syncfusion/ej2-inputs/styles/material.css';  
+@import './../../../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import './../../../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import './../../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import "./../../../node_modules/@syncfusion/ej2-react-grids/styles/material.css";
 @font-face {  
     src: url('./../../../font/Urbanist-VariableFont_wght.ttf');
     font-family:Urbanist;
 }
-
+.grid{
+    width: 80%;
+    justify-content: center;
+    padding-left: 160px;
+    padding-top: 50px;
+}
 .Playlist-Header{
     margin-top: 25px;
     justify-content: center;
