@@ -1,3 +1,7 @@
+import keycloak from "../keycloak";
+import UserService from "../services/UserService";
+
+
 export const MenuItems = [
     {
         id:1,
@@ -20,7 +24,8 @@ export const MenuItems = [
     {
         id:4,
         title:'Logout',
-        path:'/',
+       // path:'/',
+        onclick: UserService.doLogout,
         cName:'dropdown-link'
     },
 ]

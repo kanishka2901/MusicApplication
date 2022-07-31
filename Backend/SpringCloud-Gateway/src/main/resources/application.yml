@@ -37,7 +37,7 @@ spring:
           keycloak-spring-gateway-client:
             provider: my-keycloak-provider
             client-id: music-keycloak
-            client-secret: Up6kyt9I31p0DlmkVZAIsusLe1MUj1FY
+            client-secret: 3zKlJqzHi2WHnQAbJGbdeaT59JfnGMfU
             authorization-grant-type: authorization_code
             redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
       resourceserver:

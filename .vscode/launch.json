@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch MusicApplication",
+            "request": "launch",
+            "mainClass": "com.songs.MusicApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch EurekaApplication",
+            "request": "launch",
+            "mainClass": "com.eureka.EurekaApplication",
+            "projectName": "Eureka"
+        },
+        {
+            "type": "java",
+            "name": "Launch SpringCloudGatewayApplication",
+            "request": "launch",
+            "mainClass": "com.gateway.SpringCloudGatewayApplication",
+            "projectName": "SpringCloud-Gateway"
+        }
+    ]
+}
