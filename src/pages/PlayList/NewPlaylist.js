@@ -3,7 +3,7 @@ import NavBar from '../../components/Navigation Bar/NavBar'
 import './PlayList.css';
 import {Link} from 'react-router-dom';
 import { IconButton } from '@mui/material';
-import { GridComponent,ColumnsDirective,ColumnDirective,Filter } from '@syncfusion/ej2-react-grids';
+import { GridComponent } from '@syncfusion/ej2-react-grids';
 import FilterAltRoundedIcon from '@mui/icons-material/FilterAltRounded';
 import FilterListRoundedIcon from '@mui/icons-material/FilterListRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
@@ -15,17 +15,12 @@ import FileDownloadRoundedIcon from '@mui/icons-material/FileDownloadRounded';
 // import base_url from '../../components/API/Bootapi';
 import { AxiosContext } from 'react-axios/lib/components/AxiosProvider';
 // import axios from "axios";
+import { SongList } from '../../components/SongList';
 import Music from '../music/Music';
 import {useSongListQuery} from "../../services/MusicApi"
-//import { SongList } from '../../components/SongList';
 import { toast } from 'react-toast';
 import {registerLicense} from '@syncfusion/ej2-base';
-import { SongList } from '../../components/SongList';
-import data from './../../datasource.json';
-import { Group, Inject, Page, Sort } from '@syncfusion/ej2-react-grids';
-
 registerLicense('ORg4AjUWIQA/Gnt2VVhiQlFadVlJVXxLeUx0RWFbb1p6d1FMZVlBNQtUQF1hS35UdE1jXn9ccHJdQGNd');
-
 function PlayList() {
 
   const [filter,setFilter]=useState("");
@@ -55,14 +50,9 @@ function PlayList() {
     //     song[key].toString().toLowerCase().includes(filter.toString().toLowerCase()))
     // });
     
-  //   const{data,error,isLoading,isSuccess,isFetching}= useSongListQuery();
+    const{data,error,isLoading,isSuccess,isFetching}= useSongListQuery();
     
   useEffect(() =>{
-
-    if(isLoading)
-    {
-      <div>Loading...</div>
-    }
     if(error){
       toast.error("Something went wrong")
     }
@@ -73,9 +63,9 @@ function PlayList() {
         <NavBar setFilter={setFilter}/>
         <div className='Page'>
           <div  className="Playlist-Header">
-            <h1 className='Playlist-Header-label'>Uploaded Songs</h1>
+            <h1 className='Playlist-Header-label'>Uploded Songs</h1>
           </div>
-          {/* <div className='Playlist-Search-bar'>
+          <div className='Playlist-Search-bar'>
             <IconButton className='Playlist-search-icon'>
               <SearchRoundedIcon/>
             </IconButton>
@@ -94,29 +84,20 @@ function PlayList() {
                 <FilterListRoundedIcon/>
               </IconButton>
             </div>
-          </div > */}
-          <div className='grid'>
-          <GridComponent dataSource={data} allowPaging={true} allowSorting={true} allowFiltering={true}>
-          <ColumnsDirective>
-          <ColumnDirective field='id' headerText='ID' width='80' textAlign="Left" fontSize='700' />
-                <ColumnDirective field='name' headerText='Name' width='80' textAlign="Left"/>
-                <ColumnDirective field='date' headerText='Date' width='80' textAlign="Left"/>
-                <ColumnDirective field='singer' headerText='Singer' width='80' textAlign="Left"/>
-          </ColumnsDirective>
-          <Inject services={[Page, Sort, Filter, Group]}/>
-             </GridComponent>
-             </div>
-          {/* {data &&
-            data.length>0 ? data.map( (song,index) =>    */}
+          </div >
+           <GridComponent datasource={data}/>
+
+          {data &&
+            data.length>0 ? data.map( (song,index) =>   
 
 
 
-            {/* // <Music song={item}/>  */}
+            // <Music song={item}/> 
 
 
 
 
-            {/* <div className="song-card" key={song.id}> */}
+            <div className="song-card" key={song.id}>
 
 
 
@@ -129,21 +110,21 @@ function PlayList() {
 
 
 
-            {/* <p id='index'>0{index+1}</p>
+            <p id='index'>0{index+1}</p>
                     <p>{song.name}</p>
                     <p>{song.date}</p>
                     <p>{song.singer}</p>
             <div>
-              <DeleteIcon */}
+              <DeleteIcon
 
 
-                 {/* onClick={(e) => deleteSong(e, song.id)} */}
-                {/* className="song-card-icons" */}
+                // onClick={(e) => deleteSong(e, song.id)}
+                className="song-card-icons"
 
 
-
-              {/* /> */}
-              {/* <Link to="/EditForm">
+                
+              />
+              <Link to="/EditForm">
               <EditOutlinedIcon  className='song-card-icons'/>
               </Link>
               <FileDownloadRoundedIcon
@@ -154,7 +135,7 @@ function PlayList() {
             </div>
           </div>
             ):"no songs" 
-          } */}
+          }
           <div className='Playlist-Add-Btn'>
             <Link to="/AddMusic">
               <IconButton >

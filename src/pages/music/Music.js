@@ -9,7 +9,10 @@ import base_url from "../../components/API/Bootapi";
 import FileDownload from "js-file-download";
 import { toast } from "react-toast";
 import EditForm from "../../components/EditForm";
-import { Form, Button } from "react-bootstrap";
+// import {Form,Button} from "react-bootstrap";
+// import { Form } from "react-bootstrap/lib/navbar";
+// import { Button } from "react-bootstrap/lib/inputgroup";
+// import { Form, Button } from "react-bootstrap";
 import {Link} from 'react-router-dom';
 
 const Music = ({ song }) => {

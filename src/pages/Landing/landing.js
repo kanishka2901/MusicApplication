@@ -10,7 +10,7 @@ function Landing() {
   const { keycloak, initialized } = useKeycloak();
   return (
      <>
-    // <RenderOnAnonymous>
+     <RenderOnAnonymous>
     <div className='page'>
         <img className='logo' src={logo} alt=""/>
         {/* <Link className="link" to="/Sign-Up">
@@ -30,7 +30,7 @@ function Landing() {
                  {/* )} */}
         
     </div>
-    // </RenderOnAnonymous>
+     </RenderOnAnonymous>
     </>
   )
 }
