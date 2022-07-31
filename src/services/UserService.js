@@ -18,7 +18,7 @@ const initKeycloak = (onAuthenticatedCallback) => {
         console.log("user is not authenticated..!");
       }
       // onAuthenticatedCallback();
-      this.props.history.push('/Home');
+      // this.props.history.push('/Home');
     })
     .catch(console.error);
 };
