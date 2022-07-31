@@ -20,11 +20,7 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "js-file-download": "^0.4.12",
-<<<<<<< HEAD
-    "keycloak-js": "^19.0.0",
-=======
     "json-server": "^0.17.0",
->>>>>>> ce0f31830802a601d78b9ae2c61537b40f2fd68d
     "react": "^18.2.0",
     "react-axios": "^2.0.6",
     "react-bootstrap": "^2.4.0",
