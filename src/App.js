@@ -21,19 +21,21 @@ function App() {
     <>
       <ReactKeycloakProvider authClient={keycloak}>
     <Router>
-      <Switch>
+      <Routes>
         <Route exact path="/"  element={<Landing/>}></Route>
         <Route exact path="/Sign-In" element={<SignIn/>}></Route>
         <Route exact path="/Sign-Up" element={<SignUp/>}></Route>
-        <AuthenticatedRoute path="/Home" ><Home/></AuthenticatedRoute>
+        {/* <AuthenticatedRoute path="/Home" ><Home/></AuthenticatedRoute> */}
+         <Route exact path="/Home" element={<Home/>}></Route> 
+        
         <Route exact path="/Your-Playlist" element={<Playlist/>}></Route>
         <Route exact path="/AddMusic" element={<AddMusic/>}></Route>
         <Route exact path="/EditForm" element={<EditForm/>}></Route>  
         <Route exact path="/Contact" element={<Contact/>}></Route>
-        </Switch>
+        </Routes>
       <div>
         {/* <RenderOnAnonymous><Landing /></RenderOnAnonymous> */}
-       <RenderOnAuthenticated><Home /></RenderOnAuthenticated> */
+       {/* <RenderOnAuthenticated><Home /></RenderOnAuthenticated>  */}
       </div>
     </Router>
     </ReactKeycloakProvider>

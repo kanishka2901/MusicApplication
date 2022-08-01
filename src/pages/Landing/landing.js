@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import { useKeycloak } from '@react-keycloak/web/lib/useKeycloak';
 import RenderOnAnonymous from '../../components/RenderOnAnonymous'
 import UserService from '../../services/UserService';
+import RenderOnAuthenticated from '../../components/RenderOnAuthenticated';
+import Homepage from '../Homepage/Homepage';
+import { Navigate } from 'react-router-dom';
 
 function Landing() {
   const { keycloak, initialized } = useKeycloak();
@@ -28,11 +31,22 @@ function Landing() {
                     SIGN IN
                    </button>
                  {/* )} */}
-        
+
+                 <RenderOnAuthenticated >
+     <Navigate to="/Home" /> 
+    </RenderOnAuthenticated> 
+           
     </div>
+
      </RenderOnAnonymous>
+     {/* <RenderOnAuthenticated >
+     <Navigate to="/Home"  /> 
+    </RenderOnAuthenticated> 
+     */}
     </>
   )
 }
 
 export default Landing
+
+//replace={true}

@@ -1,11 +1,14 @@
 
 {
   "realm": "Musicapp_keycloak",
-  "auth-server-url": "http://localhost:8180/",
+  "auth-server-url": "http://localhost:9090/",
   "ssl-required": "external",
   "resource": "music-keycloak",
+  "verify-token-audience": true,
   "credentials": {
-    "secret": "3zKlJqzHi2WHnQAbJGbdeaT59JfnGMfU"
+    "secret": "NuEzzL3oEh271hmActS7cinocDdGJd4Y"
   },
-  "confidential-port": 0
+  "use-resource-role-mappings": true,
+  "confidential-port": 0,
+  "policy-enforcer": {}
 }

@@ -12,13 +12,14 @@ const initKeycloak = (onAuthenticatedCallback) => {
     onLoad: 'check-sso',
     silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html',
     pkceMethod: 'S256',
+    checkLoginIframe: false,
   })
     .then((authenticated) => {
       if (!authenticated) {
         console.log("user is not authenticated..!");
       }
-      // onAuthenticatedCallback();
-      // this.props.history.push('/Home');
+      onAuthenticatedCallback();
+      this.props.history.push('/Home');
     })
     .catch(console.error);
 };

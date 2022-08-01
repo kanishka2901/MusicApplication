@@ -1,5 +1,6 @@
 import UserService from "../services/UserService";
-
-const RenderOnAuthenticated = ({ children }) => (UserService.isLoggedIn()) ? children : null;
+import {Link, Navigate} from 'react-router-dom';
+//const RenderOnAuthenticated = ({ children }) => (UserService.isLoggedIn()) ? children : null;
+const RenderOnAuthenticated = ({ children }) => (UserService.isLoggedIn()) ? (<Navigate to="/Home"/>) : null;
 
 export default RenderOnAuthenticated
