@@ -58,11 +58,15 @@ function PlayList() {
   //   const{data,error,isLoading,isSuccess,isFetching}= useSongListQuery();
     
   // useEffect(() =>{
+
+  //   if(isLoading)
+  //   {
+  //     <div>Loading...</div>
+  //   }
   //   if(error){
   //     toast.error("Something went wrong")
   //   }
   // })
-  console.log(data);
 
   return (
     <>

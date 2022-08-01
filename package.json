@@ -10,6 +10,7 @@
     "@mui/material": "^5.8.7",
     "@mui/styled-engine-sc": "^5.8.0",
     "@mui/x-data-grid": "^5.13.0",
+    "@react-keycloak/web": "^3.4.0",
     "@reduxjs/toolkit": "^1.8.3",
     "@syncfusion/ej2-base": "^20.2.39",
     "@syncfusion/ej2-navigations": "^20.2.39",

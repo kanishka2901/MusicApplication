@@ -2,11 +2,14 @@ import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
 import Dropdown from '../Dropdown/Dropdown';
 import logo from './../../assets/Logo.png';
+import { useKeycloak } from '@react-keycloak/web/lib/useKeycloak';
 import icon from './../../assets/UserIcon.svg'
 import './NavBar.css'
 
 function NavBar({setFilter}){
 
+
+  const { keycloak, initialized } = useKeycloak();
   const [dropdown,setDropdown]= useState(false);
   const [filter,setfilter]=useState('');
 
@@ -33,6 +36,8 @@ function NavBar({setFilter}){
           <li><Link to="/Contact">Contact Us</Link></li>
         </ul>
         </div>
+
+        
         
         <button onMouseEnter={() => setDropdown(true)}
           onMouseLeave={()=> setDropdown(false)}
