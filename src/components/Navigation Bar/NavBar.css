@@ -12,6 +12,16 @@
     display: grid;
     grid-template-columns: 5rem 0.35fr 1fr 1fr 0.5fr 5rem;
 }
+.Dark{
+    background-color: rgb(46, 46, 46);
+    font-family: Urbanist;
+    height: 70px;
+    width:100%;
+    align-items: center;
+    box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58,57,57);
+    display: grid;
+    grid-template-columns: 5rem 0.35fr 1fr 1fr 0.5fr 5rem;
+}
 .NavLogo{
     display: grid;
     width: 100px;
@@ -22,6 +32,9 @@
 }
 .MenuLink{
     grid-column: 4/5;
+}
+.MenuLink .dark a{
+    color: white;
 }
 .MenuLink ul{
     display: flex;
@@ -48,12 +61,32 @@
     border-radius: 5px;
 
 }
+#dark{
+    background-color: rgb(33, 33, 33);
+    display: flex;
+    border:none;
+    align-items: flex-start;
+    text-align: left;
+    height: 2rem;
+    margin: auto;
+    padding:0.2rem 1rem;
+    width:80%;
+    grid-column: 3/4;
+    border-radius: 5px;
+}
 .UserIcon-Bt{ 
     height: 100%;
     width: 50px;
     border:none;
     background-color: rgb(236, 236, 236);
-   
+    background:center url("../../assets/UserIcon.svg") no-repeat;
+}
+.UserIcon-Bt-dark{ 
+    height: 100%;
+    width: 50px;
+    border:none;
+    background-color: rgb(46, 46, 46);
+    background:center url("../../assets/User_white_icon.svg") no-repeat;
 }
 .UserIcon{
         height: 52px;

@@ -1,13 +1,16 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import { Link } from 'react-router-dom';
 import Dropdown from '../Dropdown/Dropdown';
 import logo from './../../assets/Logo.png';
 import { useKeycloak } from '@react-keycloak/web/lib/useKeycloak';
-import icon from './../../assets/UserIcon.svg'
-import './NavBar.css'
+import iconLight from './../../assets/UserIcon.svg';
+import iconDark from '../../assets/User_white_icon.svg';
+import './NavBar.css';
+import ToggleModeButton from './../ToggleModeButton';
+import { ToggleModeContext } from '../ToggleModeContext';
+
 
 function NavBar({setFilter}){
-
 
   const { keycloak, initialized } = useKeycloak();
   const [dropdown,setDropdown]= useState(false);
@@ -17,32 +20,30 @@ function NavBar({setFilter}){
     setfilter(e);
     setFilter(filter)
   }
-
+  const { darkMode } = useContext(ToggleModeContext);
     return(
       <>
-    <nav className='navbaritems'>
+    <nav className={darkMode ? 'Dark' : 'navbaritems'}>
         <img className='NavLogo' src={logo} alt=""/>
         <input 
-        id="searchBar" 
+        id={darkMode ? 'dark' : "searchBar" }
         type="text" 
         placeholder="SEARCH"
         value={filter}
         onChange={(e) => handleClick(e.target.value)}
         ></input>    
         <div className='MenuLink'>
-          <ul>
+          <ul className={darkMode ? 'dark' : null}>
           <li><Link to="/Home">Home</Link></li>
           <li><Link to="/About">About</Link></li>
-          <li><Link to="/Contact">Contact Us</Link></li>
+          <ToggleModeButton/>
         </ul>
+        
         </div>
 
-        
-        
         <button onMouseEnter={() => setDropdown(true)}
           onMouseLeave={()=> setDropdown(false)}
-          className='UserIcon-Bt'>
-          <img className='UserIcon' src={icon} alt=""/>
+          className={darkMode ? 'UserIcon-Bt-dark' : 'UserIcon-Bt'}>
           {dropdown && <Dropdown/>}  
         </button>
     </nav>

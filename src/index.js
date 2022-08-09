@@ -10,6 +10,7 @@ import RenderOnAuthenticated from './components/RenderOnAuthenticated';
 import RenderOnAnonymous from './components/RenderOnAnonymous';
 import Landing from './pages/Landing/Landing';
 import Homepage from './pages/Homepage/Homepage';
+import { ThemeProvider } from './components/ToggleModeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -17,7 +18,10 @@ root.render(
   <>
   <React.StrictMode>
     <Provider store={store}> 
+    <ThemeProvider>
       <App />
+    </ThemeProvider>
+      
     </Provider>
   </React.StrictMode>
 </>
