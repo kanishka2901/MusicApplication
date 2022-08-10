@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import NavBar from '../../components/Navigation Bar/NavBar'
 import './PlayList.css';
 import {Link} from 'react-router-dom';
@@ -23,6 +23,7 @@ import {registerLicense} from '@syncfusion/ej2-base';
 import { SongList } from '../../components/SongList';
 import data from './../../datasource.json';
 import { Group, Inject, Page, Sort } from '@syncfusion/ej2-react-grids';
+import { ToggleModeContext } from '../../components/ToggleModeContext';
 
 registerLicense('ORg4AjUWIQA/Gnt2VVhiQlFadVlJVXxLeUx0RWFbb1p6d1FMZVlBNQtUQF1hS35UdE1jXn9ccHJdQGNd');
 
@@ -67,12 +68,12 @@ function PlayList() {
   //     toast.error("Something went wrong")
   //   }
   // })
-
-  return (
+  const { darkMode } = useContext(ToggleModeContext);
+  return ( 
     <>
         <NavBar setFilter={setFilter}/>
-        <div className='Page'>
-          <div  className="Playlist-Header">
+        <div className={darkMode ? 'Darkbg' : null}>
+          <div  className="Playlist-Header" >
             <h1 className='Playlist-Header-label'>Uploaded Songs</h1>
           </div>
           {/* <div className='Playlist-Search-bar'>
@@ -97,7 +98,7 @@ function PlayList() {
           </div > */}
           <div className='grid'>
           <GridComponent dataSource={data} allowPaging={true} allowSorting={true} allowFiltering={true}>
-          <ColumnsDirective>
+          <ColumnsDirective className='Darkbg'>
           <ColumnDirective field='id' headerText='ID' width='80' textAlign="Left" fontSize='700' />
                 <ColumnDirective field='name' headerText='Name' width='80' textAlign="Left"/>
                 <ColumnDirective field='date' headerText='Date' width='80' textAlign="Left"/>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect ,useContext} from 'react'
 import NavBar from '../../components/Navigation Bar/NavBar'
 import TextField from '@mui/material/TextField';
 import './AddMusic.css';
@@ -8,7 +8,7 @@ import DefaultFileImg from '../../assets/mp3.png'
 import base_url from '../../components/API/Bootapi';
 import axios from "axios";
 import { toast } from 'react-toast';
-
+import { ToggleModeContext } from '../../components/ToggleModeContext';
 
 
 
@@ -75,9 +75,9 @@ const AddMusic = () => {
         console.log(song);
         e.preventDefault();
     }
-
+    const { darkMode } = useContext(ToggleModeContext);
     return (
-        <>
+        <div className={darkMode ? 'Darkbg' : null}>
             <NavBar />
             <h1 className='AddMusic-Header'>Add New Audio Track</h1>
             <div className='AddMusic-MainForm'>
@@ -142,7 +142,7 @@ const AddMusic = () => {
                     <button type='submit' onClick={SubmitFileData}>SUBMIT</button>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

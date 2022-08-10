@@ -29,6 +29,7 @@
     margin: 40px 30px 40px 30px;
     background-color: white;
     text-align: left;
+    
 }
 .card:hover {
     transform: scale(1.1);

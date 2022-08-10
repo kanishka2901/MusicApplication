@@ -8,9 +8,9 @@ import HttpService from "./services/HttpService";
 import UserService from "./services/UserService";
 import RenderOnAuthenticated from './components/RenderOnAuthenticated';
 import RenderOnAnonymous from './components/RenderOnAnonymous';
-import Landing from './pages/Landing/Landing';
 import Homepage from './pages/Homepage/Homepage';
 import { ThemeProvider } from './components/ToggleModeContext';
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

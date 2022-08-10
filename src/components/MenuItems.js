@@ -24,8 +24,8 @@ export const MenuItems = [
     {
         id:4,
         title:'Logout',
-       // path:'/',
-        onclick: UserService.doLogout,
+        path:'/',
+        //onclick: UserService.doLogout,
         cName:'dropdown-link'
     },
 ]
