@@ -7,8 +7,7 @@ import {store} from "./store"
 import HttpService from "./services/HttpService";
 import UserService from "./services/UserService";
 import RenderOnAuthenticated from './components/RenderOnAuthenticated';
-import RenderOnAnonymous from './components/RenderOnAnonymous';
-import Homepage from './pages/Homepage/Homepage';
+ import Homepage from './pages/Homepage/Homepage';
 import { ThemeProvider } from './components/ToggleModeContext';
 import './index.css';
 
