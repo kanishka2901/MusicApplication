@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ToggleModeContext } from './ToggleModeContext';
-
+import {Switch} from 'antd';
 function ToggleModeButton() {
   const { darkMode, setDarkMode } = useContext(ToggleModeContext);
   const handleTheme = () => {
@@ -8,14 +8,14 @@ function ToggleModeButton() {
     localStorage.setItem("darkMode", !darkMode);
   };
   return (
-    <button
-      className={
-        darkMode
-          ? "btn btn-floating fa fa-toggle-on"
-          : "btn btn-floating fa fa-toggle-off"
-      }
+    <Switch
+      // className={
+      //   darkMode
+      //     ? "btn btn-floating fa fa-toggle-on"
+      //     : "btn btn-floating fa fa-toggle-off"
+      // }
       onClick={handleTheme}
-    ></button>
+    />
   );
 }
 

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import Dropdown from '../Dropdown/Dropdown';
 import logo from './../../assets/Logo.png';
 import { useKeycloak } from '@react-keycloak/web/lib/useKeycloak';
-import iconLight from './../../assets/UserIcon.svg';
-import iconDark from '../../assets/User_white_icon.svg';
 import './NavBar.css';
 import ToggleModeButton from './../ToggleModeButton';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import { ToggleModeContext } from '../ToggleModeContext';
 
 
@@ -23,7 +23,7 @@ function NavBar({setFilter}){
   const { darkMode } = useContext(ToggleModeContext);
     return(
       <>
-    <nav className={darkMode ? 'Dark' : 'navbaritems'}>
+    <nav className={darkMode ? 'Dark navbaritems' : 'navbaritems'}>
         <img className='NavLogo' src={logo} alt=""/>
         <input 
         id={darkMode ? 'dark' : "searchBar" }
@@ -36,7 +36,10 @@ function NavBar({setFilter}){
           <ul className={darkMode ? 'dark' : null}>
           <li><Link to="/Home">Home</Link></li>
           <li><Link to="/About">About</Link></li>
-          <ToggleModeButton/>
+          <div id='ModeButton'>
+            <ToggleModeButton/>
+          {darkMode ? <DarkModeRoundedIcon/>:<LightModeIcon/>}
+          </div>
         </ul>
         
         </div>

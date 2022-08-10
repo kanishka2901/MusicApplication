@@ -10,7 +10,7 @@ import RenderOnAuthenticated from './components/RenderOnAuthenticated';
  import Homepage from './pages/Homepage/Homepage';
 import { ThemeProvider } from './components/ToggleModeContext';
 import './index.css';
-
+import 'antd/dist/antd.css'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

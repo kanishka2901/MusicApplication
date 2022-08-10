@@ -14,14 +14,8 @@
 }
 .Dark{
     background-color: rgb(42, 41, 41);
-    font-family: Urbanist;
-    height: 70px;
-    width:100%;
-    align-items: center;
-    box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58,57,57);
-    display: grid;
-    grid-template-columns: 5rem 0.35fr 1fr 1fr 0.5fr 5rem;
 }
+
 .NavLogo{
     display: grid;
     width: 100px;
@@ -73,6 +67,12 @@
     width:80%;
     grid-column: 3/4;
     border-radius: 5px;
+}
+
+#ModeButton{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .UserIcon-Bt{ 
     height: 100%;

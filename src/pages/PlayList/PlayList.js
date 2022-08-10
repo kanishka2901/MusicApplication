@@ -4,14 +4,7 @@ import './PlayList.css';
 import {Link} from 'react-router-dom';
 import { IconButton } from '@mui/material';
 import { GridComponent,ColumnsDirective,ColumnDirective,Filter } from '@syncfusion/ej2-react-grids';
-import FilterAltRoundedIcon from '@mui/icons-material/FilterAltRounded';
-import FilterListRoundedIcon from '@mui/icons-material/FilterListRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
-import FileDownloadRoundedIcon from '@mui/icons-material/FileDownloadRounded';
 // import base_url from '../../components/API/Bootapi';
 import { AxiosContext } from 'react-axios/lib/components/AxiosProvider';
 // import axios from "axios";
@@ -74,7 +67,7 @@ function PlayList() {
         <NavBar setFilter={setFilter}/>
         <div className={darkMode ? 'Darkbg' : null}>
           <div  className="Playlist-Header" >
-            <h1 className='Playlist-Header-label'>Uploaded Songs</h1>
+            <h1 className={darkMode ? 'Darkbg Playlist-Header-label': 'Playlist-Header-label'}>Uploaded Songs</h1>
           </div>
           {/* <div className='Playlist-Search-bar'>
             <IconButton className='Playlist-search-icon'>
@@ -156,7 +149,7 @@ function PlayList() {
           </div>
             ):"no songs" 
           } */}
-          <div className='Playlist-Add-Btn'>
+          <div className={darkMode ? 'Playlist-Add-Btn-dark':'Playlist-Add-Btn' }>
             <Link to="/AddMusic">
               <IconButton >
                 <AddRoundedIcon/>
