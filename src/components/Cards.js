@@ -5,7 +5,6 @@ const Cards = () => {
 
   return (
   <>
-  <label className='Songs-List-Label'>Recently Added Songs</label>
     <div className='Songs-List'>
       {SongList.map((song,index) => (
         <div className='card' key={index}>

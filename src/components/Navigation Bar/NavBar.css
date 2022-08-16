@@ -5,7 +5,7 @@
 .navbaritems{
     background-color: rgb(236,236,236);
     font-family: Urbanist;
-    height: 70px;
+    height: 80px;
     width:100%;
     align-items: center;
     box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58,57,57);
@@ -19,7 +19,7 @@
 .NavLogo{
     display: grid;
     width: 100px;
-    height: 36px;
+    height: 65px;
     padding: 15px;
     grid-column: 2/3;
     align-items: center;
@@ -37,6 +37,7 @@
 }
 .MenuLink li{
     list-style: none;
+    font-size: 20px;
 }
 .MenuLink a{
     text-decoration: none;
@@ -53,12 +54,11 @@
     width:80%;
     grid-column: 3/4;
     border-radius: 5px;
-
 }
 #dark{
     background-color: rgb(33, 33, 33);
     display: flex;
-    border:none;
+    border:1px solid white;
     align-items: flex-start;
     text-align: left;
     height: 2rem;
@@ -67,6 +67,7 @@
     width:80%;
     grid-column: 3/4;
     border-radius: 5px;
+    border-color: azure;
 }
 
 #ModeButton{

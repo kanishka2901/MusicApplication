@@ -17,7 +17,8 @@ import { SongList } from '../../components/SongList';
 import data from './../../datasource.json';
 import { Group, Inject, Page, Sort } from '@syncfusion/ej2-react-grids';
 import { ToggleModeContext } from '../../components/ToggleModeContext';
-
+import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
+ import './dark.css'; 
 registerLicense('ORg4AjUWIQA/Gnt2VVhiQlFadVlJVXxLeUx0RWFbb1p6d1FMZVlBNQtUQF1hS35UdE1jXn9ccHJdQGNd');
 
 function PlayList() {
@@ -89,9 +90,9 @@ function PlayList() {
               </IconButton>
             </div>
           </div > */}
-          <div className='grid'>
-          <GridComponent dataSource={data} allowPaging={true} allowSorting={true} allowFiltering={true}>
-          <ColumnsDirective className='Darkbg'>
+          <div className={darkMode ? 'dark grid' : 'grid'}>
+          <GridComponent dataSource={data} allowPaging={true} allowSorting={true} allowFiltering={true} id='grid'>
+          <ColumnsDirective >
           <ColumnDirective field='id' headerText='ID' width='80' textAlign="Left" fontSize='700' />
                 <ColumnDirective field='name' headerText='Name' width='80' textAlign="Left"/>
                 <ColumnDirective field='date' headerText='Date' width='80' textAlign="Left"/>

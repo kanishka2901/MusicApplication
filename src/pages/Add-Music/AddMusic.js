@@ -10,8 +10,6 @@ import axios from "axios";
 import { toast } from 'react-toast';
 import { ToggleModeContext } from '../../components/ToggleModeContext';
 
-
-
 const AddMusic = () => {
 
 
@@ -79,14 +77,14 @@ const AddMusic = () => {
     return (
         <div className={darkMode ? 'Darkbg' : null}>
             <NavBar />
-            <h1 className='AddMusic-Header'>Add New Audio Track</h1>
+            <h1 className={darkMode ? 'Darkbg AddMusic-Header' : 'AddMusic-Header'}>Add New Audio Track</h1>
             <div className='AddMusic-MainForm'>
                 <div className='AddMusic-Form-img'>
                     <img src={DefaultImg} alt='' />
                 </div>
-                <form className='AddMusic-Form' onSubmit={handleForm}>
+                <form className={darkMode ? 'Darkbg AddMusic-Form' : 'AddMusic-Form'} onSubmit={handleForm}>
                     <TextField
-                        className='Add-Field' htmlFor="standard-basic"
+                        className='Add-Field' 
                         id="standard-basic"
                         label="Title"
                         type="text"
@@ -96,7 +94,7 @@ const AddMusic = () => {
                     />
                     <p></p>
                     <TextField
-                        className='Add-Field' htmlFor="standard-basic"
+                        className='Add-Field' 
                         id="standard-basic"
                         label="Artist"
                         type="text"
@@ -106,7 +104,7 @@ const AddMusic = () => {
                     />
                     <p></p>
                     <TextField
-                        className='Add-Field' htmlFor="standard-basic"
+                        className='Add-Field'
                         id="standard-basic"
                         label="Genre"
                         type="text"
